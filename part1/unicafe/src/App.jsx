@@ -13,6 +13,9 @@ const Statistics = (props) => {
       <p>good {props.good}</p>
       <p>neutral {props.neutral}</p>
       <p>bad {props.bad}</p>
+      <p>all {props.total}</p>
+      <p>average {props.average}</p>
+      <p>positive {props.positive} %</p>
     </div>
   )
 }
@@ -24,6 +27,8 @@ const App = () => {
   const [bad, setBad] = useState(0)
 
   const total = good + neutral + bad
+  const average = total === 0 ? 0 : (good * 1 + bad * -1) / total
+  const positive = total === 0 ? 0 : (good / total) * 100
 
   return (
     <div>
@@ -35,7 +40,14 @@ const App = () => {
 
       <button onClick={() => setBad(bad + 1)}>bad</button>
       <h2>Statistics</h2>
-      <Statistics good={good} neutral={neutral} bad={bad} total={total} />
+      <Statistics
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        total={total}
+        average={average}
+        positive={positive}
+      />
     </div>
   )
 }
