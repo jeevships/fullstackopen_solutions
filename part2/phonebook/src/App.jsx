@@ -19,10 +19,31 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
 
-    // Check if the name already exists in the phonebook
-    if (persons.some((person) => person.name === newName)) {
-      // Alert the user that the name already exists
-      alert(`${newName} is already added to phonebook`)
+    // Check if the name already exists in the phonebook (case-insensitive)
+    const existingPerson = persons.find(
+      (person) => person.name.toLowerCase() === newName.toLowerCase()
+    )
+    if (existingPerson) {
+      // Ask user to confirm replacing the old number with a new one
+      if (
+        window.confirm(
+          `${existingPerson.name} is already added to phonebook, replace the old number with a new one?`
+        )
+      ) {
+        const updatedPerson = { ...existingPerson, number: newNumber }
+
+        personService
+          .update(existingPerson.id, updatedPerson)
+          .then((returnedPerson) => {
+            setPersons(
+              persons.map((person) =>
+                person.id !== existingPerson.id ? person : returnedPerson
+              )
+            )
+            setNewName('')
+            setNewNumber('')
+          })
+      }
       return
     }
 
@@ -36,6 +57,14 @@ const App = () => {
       setNewName('')
       setNewNumber('')
     })
+  }
+
+  const handleDelete = (id, name) => {
+    if (window.confirm(`Delete ${name} ?`)) {
+      personService.remove(id).then(() => {
+        setPersons(persons.filter((person) => person.id !== id))
+      })
+    }
   }
 
   const handleSearchChange = (event) => {
@@ -62,7 +91,7 @@ const App = () => {
       />
 
       <h3>Numbers</h3>
-      <Persons persons={filteredPersons} />
+      <Persons persons={filteredPersons} handleDelete={handleDelete} />
     </div>
   )
 }
