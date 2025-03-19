@@ -17,7 +17,7 @@ The course covers many topics of full stack web development such as:
 * Unit testing, integration testing, and end-to-end testing
 * CI/CD
 
-The course was estimated to take about 20 hours per part to complete. However, to maximize my learning potential I generally spent anywhere from 25 to 40 hours per part. I found this extra time to be very beneficial. I was able to review my code and refator it for better readability and ease of maintenance.
+The course was estimated to take about 20 hours per part to complete. However, to maximize my learning potential I generally spent anywhere from 25 to 40 hours per part. I found this extra time to be very beneficial.
 
 ## Summary of Course Contents and Projects
 
