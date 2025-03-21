@@ -71,4 +71,4 @@ Topics:
 
 Projects:
 
-* [Sequence diagrams](https://github.com/jeevships/fullstackopen_solutions/tree/master/part0) - Diagrams to illustrate the chain of events during network communication for single page apps and for traditional apps
+* [Sequence diagrams](https://github.com/jeevships/fullstackopen_solutions/tree/master/part0) - Diagrams to illustrate the chain of events during network communication for single page apps and for traditional apps.
