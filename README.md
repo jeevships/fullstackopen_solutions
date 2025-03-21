@@ -17,7 +17,45 @@ The course covers many topics of full stack web development such as:
 * Unit testing, integration testing, and end-to-end testing
 * CI/CD
 
-The course was estimated to take about 20 hours per part to complete. However, to maximize my learning potential I generally spent anywhere from 25 to 40 hours per part. I found this extra time to be very beneficial.
+The course was estimated to take about 20 hours per part to complete. However, to maximize my learning potential I'm generally spending anywhere from 25 to 40 hours per part. I find this extra time to be very beneficial.
+
+# Repository Structure
+
+The repository is organized according to the course parts:
+
+* Part 0: Fundamentals of Web apps
+* Part 1: Introduction to React
+* Part 2: Communicating with server
+* Part 3: Programming a server with NodeJS and Express
+* Part 4: Testing Express servers, user administration
+* Part 5: Testing React apps
+* Part 6: Advanced state management
+* Part 7: React router, custom hooks, styling app with CSS and webpack
+* Part 8: GraphQL
+* Part 9: TypeScript
+* Part 10: React Native
+* Part 11: CI/CD
+* Part 12: Containers
+* Part 13: Using relational databases
+
+Each part has its own directory with the exercises completed for that section.
+
+# Progress Tracker
+
+- [x] Part 0
+- [ ] Part 1
+- [ ] Part 2
+- [ ] Part 3
+- [ ] Part 4
+- [ ] Part 5
+- [ ] Part 6
+- [ ] Part 7
+- [ ] Part 8
+- [ ] Part 9
+- [ ] Part 10
+- [ ] Part 11
+- [ ] Part 12
+- [ ] Part 13
 
 ## Summary of Course Contents and Projects
 
