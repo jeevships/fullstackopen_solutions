@@ -1,18 +1,26 @@
 import { useState } from 'react'
 
 const Header = () => {
-  return(
-      <h1>
-        Give Feedback
-      </h1>
-  
+  return <h1>Give Feedback</h1>
+}
+
+const Total = ({ good, neutral, bad }) => {
+  return <div>all {good + neutral + bad}</div>
+}
+
+const Average = ({ good, neutral, bad }) => {
+  return (
+    <div>
+      average{' '}
+      {good + neutral + bad === 0 ? 0 : ((good - bad) / (good + neutral + bad)).toFixed(1)}
+    </div>
   )
 }
 
-const Total = ({good, neutral, bad}) => {
-  return(
+const Positive = ({ good, neutral, bad }) => {
+  return (
     <div>
-        all {good + neutral + bad}
+      positive {good + neutral + bad === 0 ? 0 : (good / (good + neutral + bad) * 100).toFixed(1)} %
     </div>
   )
 }
@@ -33,8 +41,9 @@ const App = () => {
       <div>good {good}</div>
       <div>neutral {neutral}</div>
       <div>bad {bad}</div>
-      <Total good={good} neutral={neutral} bad={bad}/>
-
+      <Total good={good} neutral={neutral} bad={bad} />
+      <Average good={good} neutral={neutral} bad={bad} />
+      <Positive good={good} neutral={neutral} bad={bad} />
     </div>
   )
 }
