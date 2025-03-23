@@ -26,6 +26,14 @@ const Positive = ({ good, neutral, bad }) => {
 }
 
 const Statistics = ({good, neutral, bad }) => {
+  if (good + neutral + bad === 0) {
+  return (
+    <div>
+      <h1>Statistics</h1>
+      <p>No Feedback Given</p>
+    </div>
+  )
+} else {
   return (
     <div>
         <h1>Statistics</h1>
@@ -35,8 +43,9 @@ const Statistics = ({good, neutral, bad }) => {
       <Total good={good} neutral={neutral} bad={bad} />
       <Average good={good} neutral={neutral} bad={bad} />
       <Positive good={good} neutral={neutral} bad={bad} />
-    </div>
+    </div>  
   )
+}
 }
 
 const App = () => {
